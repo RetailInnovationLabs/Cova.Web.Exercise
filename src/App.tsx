@@ -56,7 +56,6 @@ function App() {
     // Submit your form here
   };
 
-  console.log(pokemonAbilities, "pokemonAbilities");
   return (
     <ChakraProvider>
       <Title title={title} query={currentPokemonSearching} />
