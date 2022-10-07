@@ -1,27 +1,92 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import './App.css';
-import logo from './logo.svg';
+import {
+  Button,
+  Center,
+  ChakraProvider,
+  Flex,
+  Heading,
+  Highlight,
+  Image,
+  ListItem,
+  UnorderedList
+} from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/toast";
+import { useState } from "react";
+import useSWR from "swr";
+import { Form } from "./components";
+import { getPokemonAbilities } from "./services/pokemon";
 
+const Title = ({ title, query }: { title: string; query: string }) => (
+  <Center>
+    <Heading padding={3}>
+      <Highlight
+        query={query}
+        styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
+      >
+        {title}
+      </Highlight>
+    </Heading>
+  </Center>
+);
 
 function App() {
+  const toast = useToast();
+  const [currentPokemonSearching, setCurrentPokemonSearching] = useState("");
+  const { data: pokemonAbilities } = useSWR(
+    [currentPokemonSearching, "PokemonAbilities"],
+    getPokemonAbilities,
+    {
+      revalidateOnFocus: false,
+      onSuccess: (data) => {
+        if (data.length) {
+          toast({
+            title: "Abilities Found",
+            description: "We have found some abilities for your pokemon",
+            status: "success",
+          });
+        }
+      },
+    }
+  );
+
+  const title = currentPokemonSearching
+    ? `You are currently searching for ${currentPokemonSearching}`
+    : "Please search for a pokemon and pick some abilities.";
+
+  const handleOnSubmitForm = () => {
+    // Submit your form here
+  };
+
+  console.log(pokemonAbilities, "pokemonAbilities");
   return (
     <ChakraProvider>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Title title={title} query={currentPokemonSearching} />
+      <Center>
+        <Flex color="white" gap="16px" padding="2">
+          <Center>
+            <Form setCurrentPokemonSearching={setCurrentPokemonSearching} />
+          </Center>
+          <Center>
+            <UnorderedList>
+              {(pokemonAbilities ?? []).map(({ name, url, image }) => (
+                <ListItem color="teal.500" key={url}>
+                  {name}
+                  <Image
+                    boxSize="100px"
+                    objectFit="cover"
+                    src={image}
+                    alt={name}
+                  />
+                </ListItem>
+              ))}
+            </UnorderedList>
+          </Center>
+        </Flex>
+      </Center>
+      <Center>
+        <Button onClick={handleOnSubmitForm} colorScheme="teal" size="md">
+          Search Pokemon
+        </Button>
+      </Center>
     </ChakraProvider>
   );
 }
