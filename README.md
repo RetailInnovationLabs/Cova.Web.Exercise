@@ -10,20 +10,20 @@ This is the take home exercise for Cova for a web developer role conducted befor
 
 ## Expectations
 
-- Clean, readable, high quality code. 
-- Reasoning behind major decisions and understanding of relative benefits.
-- Official documention for React, JavaScript etc should be the primary reference point. Referring to other sources can be the reality of developer activities and not feasible to prevent but arbitary copy/pasting of code is discouraged and as mentioned the technical interview will discuss the reasoning behind decisions. 
-- Comment in code if something is unclear and assumptions have been made.  
+- Clean, readable, high quality code using TypeScript and React 16+ best practices. 
+- Reasoning behind major decisions and understanding of relative benefit can be discussed in the following technical interview. 
+- Official documention for React, JavaScript etc should be the primary reference point. Referring to other sources is the reality of developer life but arbitary copy/pasting of code is discouraged and as mentioned the technical interview will discuss the reasoning behind decisions made. 
+- Comment in the code if something is unclear and assumptions have been made.  
 
 
 ## Ways to get help?
 
-If you have any questions please email webdev@covasoftware.com and we will get back to you. 
+If you have any questions please email webdev@covasoftware.com and we will get back to you as soon as possible. 
 
 
 ## Time estimate
 
-You should spend maximum 2-3 hours on this task. 
+You should spend maximum 2 hours on this task. 
 
 
 ## Getting Started
@@ -40,7 +40,6 @@ yarn start
 
 
 ## Required Activities
-
 
 ### Form
 
@@ -71,31 +70,17 @@ yarn start
 There can be more than one request and you can add more interfaces but expected interfaces can't be removed (DR - CHECK THIS)
 
 * Throw an error when the unique parameter length is less than 2 characters
-* useSWR should handle errors
+* `useSWR` should handle the errors
 
   
-### Interfaces (DR - check this one)
-* The interface expects to get 3 properties which most of which are available when requested
-
-```js
-
-export interface PokemonAbility {
-	name: string;
-	url: string
-	image?: string;
-}
-
-```
-
- * Note *The sprites property contains images that can be used to populate the desired interface
 
   
 
 ### Root App
 
-* The user should be able to click the button and trigger the form  (nb: You can not move the button within the children component).
+* The user should be able to click the button and trigger the form  (nb: You can not move the button within the child component).
 
   
-## Submission
+## Submission of task
 
-Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate)) as a template and share your GitHub repository. You can add screenshots if needed and explain how you have completed this task.
+Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate)) and share your GitHub repository. You can add screenshots/comments if needed and explain how you have completed this task.
