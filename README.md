@@ -13,7 +13,7 @@ This is the take home exercise for Cova for a web developer role conducted befor
 - Clean, readable, high quality code using TypeScript and React 16+ best practices. 
 - Reasoning behind major decisions and understanding of relative benefit can be discussed in the following technical interview. 
 - Official documention for React, JavaScript etc should be the primary reference point. Referring to other sources is the reality of developer life but arbitary copy/pasting of code is discouraged and as mentioned the technical interview will discuss the reasoning behind decisions made. 
-- Comment in the code if something is unclear and assumptions have been made.  
+- Comment in the code if something is unclear,  assumptions have been made or general design decisions when appropriate.  
 
 
 ## Ways to get help?
@@ -83,4 +83,4 @@ There can be more than one request and you can add more interfaces but expected 
   
 ## Submission of task
 
-Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate)) and share your GitHub repository. You can add screenshots/comments if needed and explain how you have completed this task.
+Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate) and send a link to your repository. You can add screenshots/comments if needed and explain how you have completed this task.
