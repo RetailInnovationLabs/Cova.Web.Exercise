@@ -83,4 +83,4 @@ There can be more than one request and you can add more interfaces but expected 
   
 ## Submission of task
 
-Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate) and send a link to your repository. You can add screenshots/comments if needed and explain how you have completed this task.
+Fork or create a instance of [this project](https://github.com/RetailInnovationLabs/Cova.Web.Exercise/generate) and send a link to your repository to webdev@covasoft.com. You can add screenshots/comments if needed and explain how you have completed this task.
