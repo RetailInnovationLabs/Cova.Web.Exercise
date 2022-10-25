@@ -28,6 +28,8 @@ const Title = ({ title, query }: { title: string; query: string }) => (
   </Center>
 );
 
+const SEARCH_FORM_ID = "pokemon-search-form";
+
 function App() {
   const toast = useToast();
   const [currentPokemonSearching, setCurrentPokemonSearching] = useState("");
@@ -62,7 +64,7 @@ function App() {
       <Center>
         <Flex color="white" gap="16px" padding="2">
           <Center>
-            <Form setCurrentPokemonSearching={setCurrentPokemonSearching} />
+            <Form setCurrentPokemonSearching={setCurrentPokemonSearching} searchFormId={SEARCH_FORM_ID} />
           </Center>
           <Center>
             <UnorderedList>
@@ -82,7 +84,7 @@ function App() {
         </Flex>
       </Center>
       <Center>
-        <Button onClick={handleOnSubmitForm} colorScheme="teal" size="md">
+        <Button form={SEARCH_FORM_ID} colorScheme="teal" size="md">
           Search Pokemon
         </Button>
       </Center>
